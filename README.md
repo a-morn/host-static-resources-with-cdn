@@ -1,0 +1,3 @@
+# host-static-resources-with-cdn
+
+Vid push till prod eller staging så pushas ikonerna i `/assets` till respektive miljös Azure Blob ([stagnig](https://fastighetsbyranassets2.z16.web.core.windows.net/sweden.svg), [prod](https://fastighetsbyranassets.z16.web.core.windows.net/sweden.svg)). Azure Blobarna ligger i sin tur bakom en Azure CDN ([stagnig](https://fb-staging.azureedge.net/sweden.svg), [prod](https://fb-assets.azureedge.net/sweden.svg)). Eventuellt att man vill lägga till ett steg som invaliderar CDN:en också. Och man vill egentligen beskriva resurserna (Blob, CDN, Resource Group) med Azure Resource Manager och använda fastighetsbyran.com för CDN:erna (typ assets.fastighetsbyran.com).
