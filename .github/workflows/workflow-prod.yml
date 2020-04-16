@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      - prod
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,4 +11,4 @@ jobs:
       with:
         enabled-static-website: 'true'
         folder: 'assets'
-        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING_PROD }}

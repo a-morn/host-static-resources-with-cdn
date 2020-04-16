@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - staging
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: lauchacarro/Azure-Storage-Action@master
+      with:
+        enabled-static-website: 'true'
+        folder: 'assets'
+        connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING_STAGING }}
